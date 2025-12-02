@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Limelight&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- FullCalendar CSS -->
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js'></script>
+        <script src="js/validation.js" defer></script>
+        <title>Account</title>
+    </head>
+    <body>
+        <div id="page">
+            <!--Beggining of header-->
+            <div class="header_login">
+                    <img src="images/logo.webp" alt="Logo" class="footer-logo">
+                    <h3>For those whose main purpose is to be safe</h3>
+            </div>
+            <!--End of header-->
+            <!--Beggining of Login Form-->
+            <p id="error_message"></p>
+            <div class="login_form">
+                <form>
+                    <div class="flex-container">
+                        <h3 class="flex-item">LOG IN</h3>
+                        <input type="username" id="username" placeholder="Enter Username" name="uname" required class="flex-item">
+                        <input type="password" id="password" placeholder="Enter Password" name="psw" required class="flex-item">
+
+                        <button type="button" id="loginBtn">Login</button>
+                        <button type="button" id="registerBtn">Register</button>
+                        <span class="psw"> <a href="#">Did you forget your password?</a></span>
+                    </div>
+                </form>
+            </div>
+            <!--End of Login Form-->
+
+
+        </div>
+
+    </body>
+</html>

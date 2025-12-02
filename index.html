@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js'></script>
+        
+        <script src="js/index.js" defer></script> <title>WEBTEC</title>
+    </head>
+    <body>
+        <div id="page">
+          
+            <div id="header" class="header">
+                <div class="header__brand">
+                    <img src="images/logo.webp" alt="Logo">
+                </div>
+                <div class="header__nav">
+                    <a href="index.html">HOME</a>
+                    <a href="account.html">LOG IN</a>
+                </div>
+            </div>
+
+            <section class="tabs">
+                <div class="tab-list" role="tablist">
+                    <button class="tab is-active" data-tab="loc" role="tab" aria-selected="true">LOCATION</button>
+                    <button class="tab" data-tab="date" role="tab" aria-selected="false">DATES</button>
+                    <button class="tab" data-tab="latest" role="tab" aria-selected="false">LATEST EDITIONS</button>
+                    <button class="tab" data-tab="part" role="tab" aria-selected="false">PARTNERS</button>
+                    <button class="tab" data-tab="comitt" role="tab" aria-selected="false">COMITEES</button>
+                </div>
+            </section>
+
+            <div class="tab-panels">
+                <div class="tab-panel" data-panel="loc">
+                    <img src="images/imagenSVCC.png" alt="SVCC 2026 Location" class="imgLoc">
+                    <p>Join us for SVCC 2026 at the prestigious San Jose State University, a leading institution located in the heart of Silicon Valley's technological hub. This premier academic venue provides the perfect setting for our security-focused conference, featuring state-of-the-art facilities that support cutting-edge demonstrations of network intrusion detection systems and secure communication protocols. The university's central location offers excellent connectivity to major airports and public transportation, ensuring easy access for our international attendees. Our event will utilize specialized computer labs and lecture halls equipped for hands-on workshops, where participants can engage with the latest advancements in secure system design and hardware-based security solutions. The campus is surrounded by a variety of accommodations and dining options, ensuring a comfortable experience for all attendees. We've chosen this location to foster collaboration among security professionals, academic researchers, and industry leaders in an environment that perfectly blends academic excellence with technological innovation.</p>
+                </div>
+                <div class="tab-panel" data-panel="date">
+                    <div id='calendar'></div>
+                    <p class="calendar-note">Important Event: January 9, 2026</p>
+                </div>
+                <div class="tab-panel" data-panel="latest">
+                    <p>The last three editions of WEBTEC focused on zero-trust deployments, post-quantum encryption pilots, and hands-on hardware red-teaming labs. Each year we publish a digital compendium summarizing research highlights, release candidate tools, and lessons learned from enterprise-scale rollouts.</p>
+                    <p>Download packs include video replays, curated code samples, and facilitator notes so teams can replicate the workshops internally. Join the newsletter to get early access when the 2025 recap drops.</p>
+                </div>
+                <div class="tab-panel" data-panel="part">
+                    <div class="partners">
+                        <img src="images/partners/p1.jpeg">
+                        <img src="images/partners/p2.webp">
+                        <img src="images/partners/p3.webp" >
+                        <img src="images/partners/p4.webp" >
+                    </div>
+                    
+                    <p>Our partners include semiconductor foundries, secure cloud vendors, and boutique firmware audit shops. Together we curate demo stations, sponsor scholarships, and build the challenge environments used during the live capture-the-flag.</p>
+                    <p>Interested in partnering? Pitch a co-branded lab, propose a tooling giveaway, or offer mentoring hours for student attendees. We welcome collaborations that elevate hands-on, practical security.</p>
+                </div>
+                <div class="tab-panel" data-panel="comitt">
+                    <p>The technical committee reviews every talk, vetting reproducibility and bias. The program committee curates tracks—from secure silicon to AI incident response—while the community committee handles accessibility, local outreach, and code-of-conduct enforcement.</p>
+                    <p>If you want to serve, submit a short bio outlining your expertise and the committee you’d like to join. Rotations open each spring to keep perspectives fresh.</p>
+                </div>
+            </div>
+
+            <div class="responsive-container-block big-container">
+                <div class="responsive-container-block bg">
+                    <p class="text-blk title">Testimonials</p>
+                    <p class="text-blk desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit massa ante viverra non maecenas. Faucibus amet quis duis egestas.
+                    </p>
+                    <div class="responsive-container-block blocks">
+                    <div class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content">
+                        <p class="text-blk info-block">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+                        </p>
+                        <div class="responsive-container-block person">
+                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block">
+                            <img class="profile-img" src="images\testimonials\mujer.jpg">
+                        </div>
+                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block">
+                            <p class="text-blk name">Bellatrix Lestrange</p>
+                            <p class="text-blk desig">CoFounder</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content">
+                        <p class="text-blk info-block">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+                        </p>
+                        <div class="responsive-container-block person">
+                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block">
+                            <img class="profile-img" src="images\testimonials\elmoha.jpg">
+                        </div>
+                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block">
+                            <p class="text-blk name">Mckenzie Jr</p>
+                            <p class="text-blk desig">CEO</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content bottom">
+                        <p class="text-blk info-block">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus adipiscing quam. Eget dui quis etiam sed eget sed est.
+                        </p>
+                        <div class="responsive-container-block person">
+                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block">
+                            <img class="profile-img" src="images\testimonials\mujer1.png">
+                        </div>
+                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block">
+                            <p class="text-blk name">Melisa Ruby</p>
+                            <p class="text-blk desig">Programmer</p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                 <div class="footer-2">
+                     <img src="images/logo.webp" alt="Logo" class="footer-logo">
+                     <h3>For those whose main purpose is to be safe</h3>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+</html>
