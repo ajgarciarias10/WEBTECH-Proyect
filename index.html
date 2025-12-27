@@ -12,7 +12,9 @@
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js'></script>
         
-        <script src="js/index.js" defer></script> <title>WEBTEC</title>
+        <script src="js/index.js" defer></script>
+        <script src="js/submission.js" defer></script>
+        <title>WEBTEC</title>
     </head>
     <body>
         <div id="page">
@@ -31,8 +33,11 @@
                 <div class="tab-list" role="tablist">
                     <button class="tab is-active" data-tab="loc" role="tab" aria-selected="true">LOCATION</button>
                     <button class="tab" data-tab="date" role="tab" aria-selected="false">DATES</button>
+                    <button class="tab" data-tab="prog" role="tab" aria-selected="false">PROGRAM</button>
+                    <button class="tab" data-tab="subm" role="tab" aria-selected="false">PAPER SUBMISSION</button>
                     <button class="tab" data-tab="latest" role="tab" aria-selected="false">LATEST EDITIONS</button>
                     <button class="tab" data-tab="part" role="tab" aria-selected="false">PARTNERS</button>
+                    <button class="tab" data-tab="reg" role="tab" aria-selected="false">REGISTRATION</button>
                     <button class="tab" data-tab="comitt" role="tab" aria-selected="false">COMITEES</button>
                 </div>
             </section>
@@ -46,6 +51,116 @@
                     <div id='calendar'></div>
                     <p class="calendar-note">Important Event: January 9, 2026</p>
                 </div>
+
+                <!-- PROGRAM -->
+                <div class="tab-panel program-panel" data-panel="prog">
+                    <h2>Program</h2>
+
+                    <h3>Day 1 - June 10, 2026</h3>
+                    <ul>
+                        <li>09:00 - 09:30 · Opening Ceremony &amp; Welcome</li>
+                        <li>09:30 - 10:30 · Keynote 1: Securing AI-Driven Systems</li>
+                        <li>11:00 - 13:00 · Regular Session: Network Security &amp; Intrusion Detection</li>
+                        <li>15:00 - 17:00 · Regular Session: Secure System Design</li>
+                        <li>19:30 - 21:00 · Welcome Reception</li>
+                    </ul>
+
+                    <h3>Day 2 - June 11, 2026</h3>
+                    <ul>
+                        <li>09:00 - 10:00 · Keynote 2: Resilience in Cloud and Edge Infrastructures</li>
+                        <li>10:30 - 13:00 · Regular Session: Cloud &amp; IoT Security</li>
+                        <li>15:00 - 17:00 · Special Session: Hardware-based Attacks and Mitigations</li>
+                        <li>20:00 - 22:00 · Conference Dinner</li>
+                    </ul>
+
+                    <h3>Day 3 - June 12, 2026</h3>
+                    <ul>
+                        <li>09:00 - 10:30 · Panel: Future of Cybersecurity in a Post-Quantum World</li>
+                        <li>11:00 - 13:00 · Poster Session</li>
+                        <li>15:00 - 16:00 · Best Paper Awards &amp; Closing Session</li>
+                    </ul>
+
+                    <h3>Keynote Speakers</h3>
+                    <div class="keynotes-container">
+                    <article class="keynote-card">
+                        <h4>Prof. Daniel Harper</h4>
+                        <p>Stanford University</p>
+                        <p><strong>Talk:</strong> Securing AI-Driven Systems in Critical Infrastructures</p>
+                    </article>
+
+                    <article class="keynote-card">
+                        <h4>Dr. Priya Malhotra</h4>
+                        <p>Google Cloud Security</p>
+                        <p><strong>Talk:</strong> Resilience in Cloud and Edge Infrastructures</p>
+                    </article>
+                    </div>
+                </div>
+
+                 <!-- PAPER SUBMISSION -->
+                <div class="tab-panel submission-panel" data-panel="subm">
+                    <h2>Paper Submission</h2>
+
+                    <h3>Important Dates</h3>
+                    <ul>
+                    <li>Paper submission deadline: 15 January 2026</li>
+                    <li>Notification of acceptance: 10 March 2026</li>
+                    <li>Camera-ready version due: 5 April 2026</li>
+                    <li>Author registration deadline: 20 April 2026</li>
+                    </ul>
+
+                    <h3>Submission Guidelines</h3>
+                    <p>
+                    Authors are invited to submit original, unpublished research papers in English.
+                    Submitted papers must not be under consideration for publication elsewhere.
+                    Papers should be formatted according to the IEEE two-column format and submitted in PDF.
+                    </p>
+
+                    <h3>Templates</h3>
+                    <ul>
+                    <li><a href="#">Download IEEE LaTeX template</a></li>
+                    <li><a href="#">Download IEEE Word template</a></li>
+                    </ul>
+
+                    <h3>Contact the Organizers</h3>
+                    <form id="contact-form" class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender" name="gender">
+
+                    <label for="idcard">ID card number</label>
+                    <input type="text" id="idcard" name="idcard">
+
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <label for="question">Your question</label>
+                    <textarea id="question" name="question" rows="3"></textarea>
+
+                    <label for="reason">Reason for contact</label>
+                    <select id="reason" name="reason">
+                        <option value="paper">Paper submission</option>
+                        <option value="registration">Registration</option>
+                        <option value="other">Other questions</option>
+                    </select>
+
+                    <div id="other-topic-wrapper" style="display: none;">
+                        <label for="other-topic">Please specify your topic</label>
+                        <textarea id="other-topic" name="other-topic" rows="2"></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-btn">Send message</button>
+                    <p id="contact-message" class="contact-message"></p>
+                    </form>
+                </div>
+
                 <div class="tab-panel" data-panel="latest">
                     <p>The last three editions of WEBTEC focused on zero-trust deployments, post-quantum encryption pilots, and hands-on hardware red-teaming labs. Each year we publish a digital compendium summarizing research highlights, release candidate tools, and lessons learned from enterprise-scale rollouts.</p>
                     <p>Download packs include video replays, curated code samples, and facilitator notes so teams can replicate the workshops internally. Join the newsletter to get early access when the 2025 recap drops.</p>
@@ -61,6 +176,96 @@
                     <p>Our partners include semiconductor foundries, secure cloud vendors, and boutique firmware audit shops. Together we curate demo stations, sponsor scholarships, and build the challenge environments used during the live capture-the-flag.</p>
                     <p>Interested in partnering? Pitch a co-branded lab, propose a tooling giveaway, or offer mentoring hours for student attendees. We welcome collaborations that elevate hands-on, practical security.</p>
                 </div>
+
+                <!-- REGISTRATION -->
+                <div class="tab-panel reg-panel" data-panel="reg">
+                    <h2>Registration</h2>
+                    <p>
+                        Choose your attendee type and review the fees for SVCC 2026. 
+                        This is a visual preview of the registration process.
+                    </p>
+
+                    <div class="reg-columns">
+                        <!-- FEES -->
+                        <div class="reg-column">
+                            <h3>Fees</h3>
+                            <table class="reg-table">
+                                <thead>
+                                    <tr>
+                                        <th>Attendee type</th>
+                                        <th>Early bird<br>(until 1 April)</th>
+                                        <th>Regular</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Student</td>
+                                        <td>$250</td>
+                                        <td>$320</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Academic</td>
+                                        <td>$450</td>
+                                        <td>$520</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Industry</td>
+                                        <td>$650</td>
+                                        <td>$720</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="reg-note">
+                                All registrations include access to keynotes, regular sessions and coffee breaks.
+                                Workshops and the conference dinner can be added as extras.
+                            </p>
+                        </div>
+
+                        <!-- FORMULARIO VISUAL -->
+                        <div class="reg-column">
+                            <h3>Pre-registration form</h3>
+                            <form class="reg-form">
+                                <label for="reg-name">Full name</label>
+                                <input type="text" id="reg-name" placeholder="Enter your full name">
+
+                                <label for="reg-email">Email</label>
+                                <input type="email" id="reg-email" placeholder="you@example.com">
+
+                                <label for="reg-type">Attendee type</label>
+                                <select id="reg-type">
+                                    <option>Student</option>
+                                    <option>Academic</option>
+                                    <option>Industry</option>
+                                </select>
+
+                                <label for="reg-days">Number of days</label>
+                                <select id="reg-days">
+                                    <option>1 day pass</option>
+                                    <option>2 days pass</option>
+                                    <option selected>Full conference (3 days)</option>
+                                </select>
+
+                                <div class="reg-extra">
+                                    <label>
+                                        <input type="checkbox">
+                                        Add hands-on workshop (+ $150)
+                                    </label>
+                                    <label>
+                                        <input type="checkbox">
+                                        Add conference dinner (+ $80)
+                                    </label>
+                                </div>
+
+                                <button type="button">Estimate fee</button>
+                                <p class="reg-form-note">
+                                    This form is for front-end demonstration only. No data is submitted.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="tab-panel" data-panel="comitt">
                     <p>The technical committee reviews every talk, vetting reproducibility and bias. The program committee curates tracks—from secure silicon to AI incident response—while the community committee handles accessibility, local outreach, and code-of-conduct enforcement.</p>
                     <p>If you want to serve, submit a short bio outlining your expertise and the committee you’d like to join. Rotations open each spring to keep perspectives fresh.</p>
@@ -119,6 +324,7 @@
                     </div>
                 </div>
             </div>
+
 
             <footer>
                  <div class="footer-2">

@@ -2,10 +2,12 @@
 // Comprobamos si existe la sesión antes de cargar nada más
 const SESSION_KEY = 'demoSession';
 
+
 if (!sessionStorage.getItem(SESSION_KEY)) {
     // Si no hay sesión, mandamos al usuario de vuelta al login
     window.location.replace('account.html');
 }
+
 
 // 2. LÓGICA DE LA INTERFAZ (Se ejecuta cuando carga el HTML)
 document.addEventListener('DOMContentLoaded', () => {
