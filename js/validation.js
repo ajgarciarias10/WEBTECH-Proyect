@@ -2,16 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.querySelector('form');
     const registerBtn = document.getElementById('registerBtn');
-    const loginBtn = document.getElementById('loginBtn');
-    const formTitle = document.getElementById('formTitle');
     
     // Inputs
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
     const errorContainer = document.getElementById('error_message');
-
-    let isRegisterMode = false;
 
     const EXTRA_USERS_KEY = 'extraUsers';
 
@@ -39,19 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Detectar clic específico en el botón Login
+        const loginBtn = document.getElementById('loginBtn');
         if (loginBtn) {
             loginBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (isRegisterMode) {
-                    // Si estamos en modo registro, cambiar a modo login
-                    isRegisterMode = false;
-                    formTitle.textContent = 'LOG IN';
-                    confirmPasswordInput.style.display = 'none';
-                    errorContainer.textContent = '';
-                } else {
-                    // Si ya estamos en modo login, ejecutar el login
-                    validateLogin();
-                }
+                e.preventDefault(); 
+                validateLogin();
             });
         }
     }
@@ -109,19 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
         registerBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            // Si no estamos en modo registro, cambiar a modo registro
-            if (!isRegisterMode) {
-                isRegisterMode = true;
-                formTitle.textContent = 'REGISTER';
-                confirmPasswordInput.style.display = 'block';
-                errorContainer.textContent = '';
-                return; // No ejecutar el registro aún
-            }
-
-            // Si ya estamos en modo registro, ejecutar el registro
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
-            const confirmPassword = confirmPasswordInput.value.trim();
 
             // Limpiar mensaje previo
             errorContainer.textContent = '';
@@ -143,11 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            if (password !== confirmPassword) {
-                errorContainer.textContent = 'Passwords do not match.';
-                return;
-            }
-
             const extraUsers = getExtraUsers();
 
             // Comprobar que no exista ya en localStorage
@@ -165,19 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
             errorContainer.style.color = 'green';
             errorContainer.textContent =
                 `Account created successfully for ${username}. You can now log in.`;
-
-            // Limpiar campos
-            usernameInput.value = '';
-            passwordInput.value = '';
-            confirmPasswordInput.value = '';
-
-            // Volver al modo login después de 1.5 segundos
-            setTimeout(() => {
-                isRegisterMode = false;
-                formTitle.textContent = 'LOG IN';
-                confirmPasswordInput.style.display = 'none';
-                errorContainer.textContent = '';
-            }, 1500);
         });
     }
 });
